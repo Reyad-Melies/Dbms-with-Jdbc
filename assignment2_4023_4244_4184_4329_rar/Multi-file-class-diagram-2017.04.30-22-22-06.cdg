@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="XmlToHtml" package="database" visibility="public" xPosition="588.0" yPosition="577.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="convertXMLToHTML" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Source" name="xml"/>
+          <Argument type="Source" name="xslt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ValidationFactory" package="database" visibility="public" xPosition="221.0" yPosition="577.0">
+      <Fields>
+        <Field name="parser" type="Parsers" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Validate_Create" returnType="String" visibility="public">
+          <Argument type="String" name="Query"/>
+        </Method>
+        <Method name="Create_GetTName" returnType="String" visibility="public">
+          <Argument type="String" name="Query"/>
+        </Method>
+        <Method name="Create_GetColumns" returnType="String[]" visibility="public">
+          <Argument type="String" name="Query"/>
+        </Method>
+        <Method name="Creat_getType" returnType="String[]" visibility="public">
+          <Argument type="String" name="Query"/>
+        </Method>
+        <Method name="drop_getname" returnType="String" visibility="public">
+          <Argument type="String" name="Query"/>
+        </Method>
+        <Method name="Validate_Select" returnType="boolean" visibility="public">
+          <Argument type="String" name="Query"/>
+        </Method>
+        <Method name="Select_TableName" returnType="String" visibility="public">
+          <Argument type="String" name="Query"/>
+        </Method>
+        <Method name="Select_Columns" returnType="String[]" visibility="public">
+          <Argument type="String" name="Query"/>
+        </Method>
+        <Method name="Select_condition" returnType="String[]" visibility="public">
+          <Argument type="String" name="Query"/>
+        </Method>
+        <Method name="validate_Update" returnType="boolean" visibility="public">
+          <Argument type="String" name="Query"/>
+        </Method>
+        <Method name="Get_insert" returnType="String[][]" visibility="public">
+          <Argument type="String" name="Query"/>
+        </Method>
+        <Method name="getQueryType" returnType="void" visibility="public">
+          <Argument type="String" name="Query"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Parsers" package="database" visibility="public" xPosition="145.0" yPosition="218.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="createTable" returnType="boolean" visibility="public">
+          <Argument type="String" name="tableName"/>
+          <Argument type="String[]" name="columnNames"/>
+          <Argument type="String[]" name="dataTypes"/>
+        </Method>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="String" name="table_name"/>
+          <Argument type="String[]" name="columns"/>
+        </Method>
+        <Method name="Insert" returnType="void" visibility="public">
+          <Argument type="String" name="table_name"/>
+          <Argument type="String[][]" name="Data"/>
+        </Method>
+        <Method name="GetLocation" returnType="List" visibility="public">
+          <Argument type="String" name="table_name"/>
+          <Argument type="String[]" name="condition"/>
+        </Method>
+        <Method name="DeleteFrom" returnType="int" visibility="public">
+          <Argument type="String" name="table_name"/>
+          <Argument type="String[]" name="condition"/>
+        </Method>
+        <Method name="Select" returnType="Object[][]" visibility="public">
+          <Argument type="String" name="table_name"/>
+          <Argument type="String[]" name="columns"/>
+          <Argument type="String[]" name="condition"/>
+        </Method>
+        <Method name="dropTable" returnType="boolean" visibility="package">
+          <Argument type="String" name="tableName"/>
+        </Method>
+        <Method name="isNumeric" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="str"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DataBasei" package="database" visibility="public" xPosition="750.0" yPosition="313.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="executeStructureQuery" returnType="boolean" visibility="public">
+          <Argument type="String" name="query"/>
+        </Method>
+        <Method name="executeRetrievalQuery" returnType="Object[][]" visibility="public">
+          <Argument type="String" name="query"/>
+        </Method>
+        <Method name="executeUpdateQuery" returnType="int" visibility="public">
+          <Argument type="String" name="query"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Database" package="eg.edu.alexu.csd.oop.db" visibility="public" xPosition="643.0" yPosition="44.0">
+      <Methods>
+        <Method name="executeStructureQuery" returnType="boolean" visibility="public">
+          <Argument type="String" name="query"/>
+        </Method>
+        <Method name="executeRetrievalQuery" returnType="Object[][]" visibility="public">
+          <Argument type="String" name="query"/>
+        </Method>
+        <Method name="executeUpdateQuery" returnType="int" visibility="public">
+          <Argument type="String" name="query"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="database.DataBasei" target="eg.edu.alexu.csd.oop.db.Database"/>
+    <UseRelation name="" source="database.Parsers" target="database.XmlToHtml" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="parser" source="database.ValidationFactory" target="database.Parsers" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="database.DataBasei" target="database.Parsers" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

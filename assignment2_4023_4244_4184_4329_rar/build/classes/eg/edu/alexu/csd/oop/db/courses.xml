@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<courses>
+    <row>
+        <course_id>
+            101
+        </course_id>
+        <course_name>
+            Programming
+        </course_name>
+        <credit_hours>
+            4
+        </credit_hours>
+    </row>
+        <row>
+        <course_id>
+            102
+        </course_id>
+        <course_name>
+           
+        </course_name>
+        <credit_hours>
+            3
+        </credit_hours>
+    </row>
+        <row>
+        <course_id>
+            103
+        </course_id>
+        <course_name>
+            Logic Circuits
+        </course_name>
+        <credit_hours>
+            3
+        </credit_hours>
+    </row>
+        <row>
+        <course_id>
+            104
+        </course_id>
+        <course_name>
+            Circuits
+        </course_name>
+        <credit_hours>
+            3
+        </credit_hours>
+    </row>
+        <row>
+        <course_id>
+            105
+        </course_id>
+        <course_name>
+            Maths
+        </course_name>
+        <credit_hours>
+            3
+        </credit_hours>
+    </row>
+</courses>
